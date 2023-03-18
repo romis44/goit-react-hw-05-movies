@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, Outlet, useParams, useLocation } from 'react-router-dom';
+import { TitleStyle, CastStyle } from './MoviesDetails.styled';
 
 import { getMovieDetails } from 'services/api';
 
@@ -29,19 +30,19 @@ export default function MoviesDetails() {
       {loading && <Loader />}
       <MovieDetails movie={movie} />
 
-      <h2 style={{ textAlign: 'center' }}>Additional information</h2>
+      <TitleStyle>Additional information</TitleStyle>
 
       <ul>
-        <li>
+        <CastStyle>
           <Link state={{ from }} to="cast">
             Cast
           </Link>
-        </li>
-        <li>
+        </CastStyle>
+        <CastStyle>
           <Link state={{ from }} to="reviews">
             Reviews
           </Link>
-        </li>
+        </CastStyle>
       </ul>
       <Outlet />
     </main>

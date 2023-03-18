@@ -1,9 +1,10 @@
 import PropTypes from 'prop-types';
+import { Label, SearchBtn } from './SearchBar.styled';
 
 export default function SearchBar({ onSubmit }) {
   return (
     <form onSubmit={onSubmit}>
-      <label>
+      <Label>
         <input
           type="text"
           autoComplete="off"
@@ -11,10 +12,10 @@ export default function SearchBar({ onSubmit }) {
           placeholder="Search movie"
           name="search"
         />
-      </label>
-      <button type="submit">
+      </Label>
+      <SearchBtn type="submit">
         <span>🔍</span>
-      </button>
+      </SearchBtn>
     </form>
   );
 }

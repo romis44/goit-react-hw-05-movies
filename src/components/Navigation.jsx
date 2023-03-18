@@ -3,8 +3,9 @@ import styled from 'styled-components';
 
 const StyledLink = styled(NavLink)`
   color: black;
+  font-weight: 800;
   &.active {
-    color: orange;
+    color: #ed9e0a;
   }
 `;
 

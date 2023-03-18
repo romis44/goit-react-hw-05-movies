@@ -48,11 +48,11 @@ a {
 
 a:hover,
 a:focus {
-  color: blueviolet;
+  color: rgb(214, 21, 21);
 }
 
 header {
-  background-color: blue;
+  background-color: rgb(81, 148, 18);
   padding: 30px 0;
   text-align: center;
 }

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
+import { toast, Toaster } from 'react-hot-toast';
 
 import { getSearchMovie } from 'services/api';
 
@@ -17,7 +18,7 @@ export default function Movies() {
     setLoading(true);
 
     if (search?.trim() === '') {
-      alert('Please insert correct data!');
+      toast.error('Please insert correct data!');
     }
 
     getSearchMovie(search)
@@ -36,6 +37,7 @@ export default function Movies() {
 
   return (
     <>
+      <Toaster position="top-right" toastOptions={{ duration: 1500 }} />
       <SearchBar onSubmit={onSubmit} />
       {loading && <Loader />}
       {search && <List movies={movies} />}

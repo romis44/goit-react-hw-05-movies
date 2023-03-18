@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { TitleName } from './HomePage.styled';
 
 import { getTrendingMovie } from 'services/api';
 import List from 'components/List';
@@ -20,7 +21,7 @@ export default function Homepage() {
   return (
     <main>
       {loading && <Loader />}
-      <h2 style={{ textAlign: 'center', margin: '15px' }}>Trending Movies</h2>
+      <TitleName>Trending Movies</TitleName>
       {<List movies={movies} />}
     </main>
   );
