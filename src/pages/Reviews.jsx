@@ -15,7 +15,7 @@ export default function Reviews() {
         setReviews(result);
       })
       .catch(error => console.log(error));
-  }, [movieId, reviews]);
+  }, [movieId]);
 
   return <>{reviews && <Review reviews={reviews} />}</>;
 }

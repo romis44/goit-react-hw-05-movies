@@ -4,9 +4,9 @@ import { Route, Routes } from 'react-router-dom';
 import Loader from './components/Loader';
 import Navigation from './components/Navigation';
 
-const HomePage = lazy(() => import('./pages/HomePage'));
+const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
 const Movies = lazy(() => import('./pages/Movies'));
-const MoviesDetails = lazy(() => import('./pages/MoviesDetails'));
+const MoviesDetails = lazy(() => import('./pages/MoviesDetails/MoviesDetails'));
 const Cast = lazy(() => import('./pages/Cast'));
 const Reviews = lazy(() => import('./pages/Reviews'));
 const NotFound = lazy(() => import('./pages/NotFound'));

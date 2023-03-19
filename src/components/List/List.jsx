@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import { Link, useLocation } from 'react-router-dom';
-import { ListStyle, Item, Img } from './List.styled';
+import { ListStyle, Img } from './List.styled';
+import image from '../../images/photo.webp';
 
 export default function List({ movies }) {
   const location = useLocation();
@@ -9,10 +10,14 @@ export default function List({ movies }) {
     <ul>
       {movies &&
         movies.map(({ id, poster_path, original_title, title }) => (
-          <Item key={id}>
+          <li key={id}>
             <Link state={{ from: location }} to={`/movies/${id}`}>
               <Img
-                src={`https://image.tmdb.org/t/p/original${poster_path}`}
+                src={
+                  poster_path
+                    ? `https://image.tmdb.org/t/p/w500${poster_path}`
+                    : image
+                }
                 alt={original_title}
                 width="300"
                 height="300"
@@ -20,7 +25,7 @@ export default function List({ movies }) {
 
               <ListStyle>{title}</ListStyle>
             </Link>
-          </Item>
+          </li>
         ))}
     </ul>
   );
@@ -30,7 +35,7 @@ List.propTypes = {
   movies: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
-      poster_path: PropTypes.string,
+      poster_path: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
       original_title: PropTypes.string.isRequired,
       title: PropTypes.string.isRequired,
     })

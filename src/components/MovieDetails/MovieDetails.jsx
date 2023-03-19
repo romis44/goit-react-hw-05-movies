@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import GoBackButton from 'components/GoBackButton';
+import image from '../../images/image.jpg';
 
 export default function MovieDetails({ movie }) {
   return (
@@ -8,7 +9,11 @@ export default function MovieDetails({ movie }) {
         <GoBackButton text="Go back" />
         <div style={{ display: 'flex' }}>
           <img
-            src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
+            src={
+              movie.poster_path
+                ? `https://image.tmdb.org/t/p/original${movie.poster_path}`
+                : image
+            }
             alt={movie.original_title}
             width="300"
             height="300"
@@ -36,7 +41,7 @@ export default function MovieDetails({ movie }) {
 
 MovieDetails.propTypes = {
   movie: PropTypes.shape({
-    poster_path: PropTypes.string.isRequired,
+    poster_path: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
     original_title: PropTypes.string.isRequired,
     popularity: PropTypes.number.isRequired,
     overview: PropTypes.string.isRequired,

@@ -4,8 +4,8 @@ import { toast, Toaster } from 'react-hot-toast';
 
 import { getSearchMovie } from 'services/api';
 
-import SearchBar from 'components/SearchBar';
-import List from 'components/List';
+import SearchBar from 'components/SearchBar/SearchBar';
+import List from 'components/List/List';
 import Loader from 'components/Loader';
 
 export default function Movies() {

@@ -6,13 +6,13 @@ export const ListStyle = styled.span`
   transition-duration: 0.5s;
 `;
 
-export const Item = styled.li`
-  transform: scale(1);
-  transition: transform 250ms linear;
-  &:hover {
-    transform: scale(1.04);
-  }
-`;
+// export const Item = styled.li`
+//   transform: scale(1);
+//   transition: transform 250ms linear;
+//   &:hover {
+//     transform: scale(1.04);
+//   }
+// `;
 
 export const Img = styled.img`
   border-radius: 10px;

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { TitleName } from './HomePage.styled';
 
 import { getTrendingMovie } from 'services/api';
-import List from 'components/List';
+import List from 'components/List/List';
 import Loader from 'components/Loader';
 
 export default function Homepage() {

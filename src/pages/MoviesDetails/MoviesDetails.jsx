@@ -4,7 +4,7 @@ import { TitleStyle, CastStyle } from './MoviesDetails.styled';
 
 import { getMovieDetails } from 'services/api';
 
-import MovieDetails from 'components/MovieDetails';
+import MovieDetails from 'components/MovieDetails/MovieDetails';
 import Loader from 'components/Loader';
 
 export default function MoviesDetails() {
@@ -23,7 +23,7 @@ export default function MoviesDetails() {
   }, [movieId]);
 
   const location = useLocation();
-  const from = location.state.from;
+  // const from = location?.state?.from;
 
   return (
     <main>
@@ -34,12 +34,12 @@ export default function MoviesDetails() {
 
       <ul>
         <CastStyle>
-          <Link state={{ from }} to="cast">
+          <Link state={{ from: location }} to="cast">
             Cast
           </Link>
         </CastStyle>
         <CastStyle>
-          <Link state={{ from }} to="reviews">
+          <Link state={{ from: location }} to="reviews">
             Reviews
           </Link>
         </CastStyle>
