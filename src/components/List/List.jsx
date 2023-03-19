@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { Link, useLocation } from 'react-router-dom';
-import { ListStyle, Img } from './List.styled';
-import image from '../../images/photo.webp';
+import { ListStyle, Img, ImgBox } from './List.styled';
+import image from '../../images/images.png';
 
 export default function List({ movies }) {
   const location = useLocation();
@@ -12,17 +12,18 @@ export default function List({ movies }) {
         movies.map(({ id, poster_path, original_title, title }) => (
           <li key={id}>
             <Link state={{ from: location }} to={`/movies/${id}`}>
-              <Img
-                src={
-                  poster_path
-                    ? `https://image.tmdb.org/t/p/w500${poster_path}`
-                    : image
-                }
-                alt={original_title}
-                width="300"
-                height="300"
-              />
-
+              <ImgBox>
+                <Img
+                  src={
+                    poster_path
+                      ? `https://image.tmdb.org/t/p/w500${poster_path}`
+                      : image
+                  }
+                  alt={original_title}
+                  width="300"
+                  height="300"
+                />
+              </ImgBox>
               <ListStyle>{title}</ListStyle>
             </Link>
           </li>

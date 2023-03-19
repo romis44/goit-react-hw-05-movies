@@ -17,3 +17,10 @@ export const ListStyle = styled.span`
 export const Img = styled.img`
   border-radius: 10px;
 `;
+
+export const ImgBox = styled.div`
+  width: 300px;
+  height: 450px;
+  display: flex;
+  object-fit: cover;
+`;

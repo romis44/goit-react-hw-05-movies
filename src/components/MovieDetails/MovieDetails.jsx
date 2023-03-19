@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import GoBackButton from 'components/GoBackButton';
-import image from '../../images/image.jpg';
+import image from '../../images/images.png';
 
 export default function MovieDetails({ movie }) {
   return (
