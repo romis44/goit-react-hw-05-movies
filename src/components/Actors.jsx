@@ -1,4 +1,6 @@
 import PropTypes from 'prop-types';
+import image from '../images/images.png';
+import { ImgBox, Img } from './List/List.styled';
 
 export default function Actors({ cast }) {
   return (
@@ -6,15 +8,18 @@ export default function Actors({ cast }) {
       {cast &&
         cast.map(({ id, name, profile_path, character }) => (
           <li key={id}>
-            <img
-              src={
-                profile_path &&
-                `https://image.tmdb.org/t/p/original${profile_path}`
-              }
-              alt={name}
-              width="300"
-              height="300"
-            />
+            <ImgBox>
+              <Img
+                src={
+                  profile_path
+                    ? `https://image.tmdb.org/t/p/original${profile_path}`
+                    : image
+                }
+                alt={name}
+                width="300"
+                height="300"
+              />
+            </ImgBox>
             <h2>{name}</h2>
             <p>Character: {character}</p>
           </li>
